@@ -1,0 +1,293 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               SHORT ABOUT                               -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="about">
+        <div class="container">
+            <div class="how-to-works">
+                <div class="row justify-content-center justify-content-sm-center justify-content-md-start">
+                    {% for card in about_card %}
+                        <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6">
+                            <div class="single-system">
+                                <div class="part-icon">
+                                    <img src="{{ card.image.url }}" alt="">
+                                </div>
+                                <div class="part-text">
+                                    <h4 class="title">{{ card.title }}</h4>
+                                    <p>{{ card.text }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div
+                    class="row justify-content-xl-between justify-content-lg-between justify-content-md-between justify-content-sm-center">
+                <div class="col-xl-6 col-lg-6 col-sm-10">
+
+                    <div class="part-text">
+                        <h2>{{ content.title }} <span class="special"></span></h2>
+                        <p>{{ content.text }} <span class="spc"></span></p>
+                        <ul>
+                            {% for step in content_step %}
+                                <li><i class="fas fa-check"></i>{{ step.text }}</li>
+                            {% endfor %}
+                        </ul>
+
+                        <a href="{{ content.button_url }}" class="btn-hyipox-2">{{ content.button_text }}</a>
+                    </div>
+
+                </div>
+                <div class="col-xl-5 col-lg-6 col-sm-10 col-md-12">
+                    <div class="part-feature">
+                        <div class="row">
+                            {% for step in about_steps %}
+                                <div class="col-xl-12 col-lg-12 col-sm-12 col-md-6">
+                                    <div class="single-feature">
+                                        <div class="feature-icon">
+                                            <img src="{{ step.image.url }}" alt="">
+                                        </div>
+                                        <div class="feature-text">
+                                            <h3>{{ step.title }}</h3>
+                                            <p>{{ step.text }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------- SHORT ABOUT ----------------------------- -->
+
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               STATISTICS                                -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="statics">
+        <div class="container">
+            <div class="all-statics">
+                <div class="row no-gutters justify-content-center">
+                    {% for card in second_card %}
+                    <div class="col-xl-4 col-lg-3 col-sm-10 col-md-4">
+                        <div class="single-statics">
+                            <div class="part-img">
+                                <img src="{{ card.image.url }}" alt="investor">
+                            </div>
+                            <div class="part-text">
+                                <span class="counter">{{ card.title }}</span>
+                                <span class="title">{{ card.text }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------- STATISTICS ------------------------------ -->
+
+
+
+
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                 WHY US                                  -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="choosing-reason">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="section-title">
+							<span class="sub-title">
+								DİGƏRLƏRİNDƏN FƏRQİMİZ
+							</span>
+                        <h2>
+                            {{ center_content.title }}<span class="special"></span>
+                        </h2>
+                        <p>{{ center_content.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-5 col-sm-10 col-md-12">
+                    <div class="part-left">
+                        <div class="row">
+
+                           {% for step_left in center_step_left %}
+
+                            <div class="col-xl-12 col-lg-12 col-md-4">
+                                <div class="single-reason">
+                                    <div class="icon-box">
+                                        <div class="part-icon">
+                                            <img src="{{ step_left.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="part-text">
+                                        <h3 class="title">{{ step_left.title }}</h3>
+                                        <p>{{ step_left.text }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                           {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-2 d-xl-flex d-lg-none d-block align-items-end">
+                    <div class="part-img">
+                        <div class="shadow-shape"></div>
+                        <img src="/static/img/choosing-reason.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-sm-10 col-md-12">
+                    <div class="part-right">
+                        <div class="row">
+
+                          {% for step_reght in center_step_right  %}
+                            <div class="col-xl-12 col-lg-12 col-md-4">
+                                <div class="single-reason">
+                                    <div class="icon-box">
+                                        <div class="part-icon">
+                                            <img src="{{ step_reght.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="part-text">
+                                        <h3 class="title">{{ step_reght.title}}</h3>
+                                        <p>{{ step_reght.text }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------- WHY US -------------------------------- -->
+
+
+
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               TESTIMONAL                                -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="testimonial">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="section-title">
+							<span class="sub-title">
+								İnvestorların düşüncələri
+							</span>
+                        <h2>Bizimlə <span class="special">Qazanan</span> İnvestorların düşüncələri</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="all-testimonials">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="testi-text-slider">
+                            <div class="single-testimonial">
+									<span class="quot-icon">
+										<img src="/static/img/icon/quot.png" alt="">
+									</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, culpa.
+                                    Magnam sapiente ipsum minima? Distinctio nostrum ipsam exercitationem! Officia
+                                    laborum perferendis!</p>
+                                <div class="part-user">
+                                    <span class="user-name">Anar Anarov</span>
+                                    <span class="user-location">Baku, Azerbaijan</span>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial">
+									<span class="quot-icon">
+										<img src="/static/img/icon/quot.png" alt="">
+									</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, culpa.
+                                    Magnam sapiente ipsum minima? Distinctio nostrum ipsam exercitationem! Officia
+                                    laborum perferendis!</p>
+                                <div class="part-user">
+                                    <span class="user-name">Anar Anarov</span>
+                                    <span class="user-location">Baku, Azerbaijan</span>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial">
+									<span class="quot-icon">
+										<img src="/static/img/icon/quot.png" alt="">
+									</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, culpa.
+                                    Magnam sapiente ipsum minima? Distinctio nostrum ipsam exercitationem! Officia
+                                    laborum perferendis!</p>
+                                <div class="part-user">
+                                    <span class="user-name">Anar Anarov</span>
+                                    <span class="user-location">Baku, Azerbaijan</span>
+                                </div>
+                            </div>
+                            <div class="single-testimonial">
+									<span class="quot-icon">
+										<img src="/static/img/icon/quot.png" alt="">
+									</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, culpa.
+                                    Magnam sapiente ipsum minima? Distinctio nostrum ipsam exercitationem! Officia
+                                    laborum perferendis!</p>
+                                <div class="part-user">
+                                    <span class="user-name">Anar Anarov</span>
+                                    <span class="user-location">Baku, Azerbaijan</span>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial">
+									<span class="quot-icon">
+										<img src="/static/img/icon/quot.png" alt="">
+									</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, culpa.
+                                    Magnam sapiente ipsum minima? Distinctio nostrum ipsam exercitationem! Officia
+                                    laborum perferendis!</p>
+                                <div class="part-user">
+                                    <span class="user-name">Anar Anarov</span>
+                                    <span class="user-location">Baku, Azerbaijan</span>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial">
+									<span class="quot-icon">
+										<img src="/static/img/icon/quot.png" alt="">
+									</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, culpa.
+                                    Magnam sapiente ipsum minima? Distinctio nostrum ipsam exercitationem! Officia
+                                    laborum perferendis!</p>
+                                <div class="part-user">
+                                    <span class="user-name">Anar Anarov</span>
+                                    <span class="user-location">Baku, Azerbaijan</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="testi-user-slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------------------- TESTIMONAL ------------------------------ -->
+{% endblock %}
+
+
+

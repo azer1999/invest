@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                SERVICES                                 -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="affiliate">
+        <div class="container">
+
+            <div class="row services_holder">
+                {% for service in services %}
+                    <a href="#service_context" class="single_service col-md-3 col-sm-6 col-xs-12">
+                        <h4 class="service_title">{{ service.title }}</h4>
+                        <div class="service_img">
+                            <img src="{{ service.image.url }}" alt="Agreement">
+                        </div>
+                        <p class="service_details">
+                            {{ service.text }}
+                        </p>
+                    </a>
+                {% endfor %}
+
+            </div>
+
+
+            <hr id="service_context" class="pb-4"/>
+
+            <div class="part-para">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <h2 class="title">Lorem ipsum dolor sit amet consectetur.</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
+                            ette dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris
+                            nisi ut aliq ex ea commodo consequat. Duis aute irure
+                            dolor in repreh voluptate velit esse cillum dolore fugiat nulla pariatur occaecat non
+                            proident, sunt inner culpa qui officia repreh voluptate esse cillum dolore occaecat non
+                            proident.</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
+                            ette dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris
+                            nisi ut aliq ex ea commodo consequat. Duis aute irure
+                            dolor in repreh voluptate velit esse cillum dolore fugiat nulla pariatur occaecat non
+                            proident, sunt inner culpa qui officia repreh voluptate esse cillum dolore occaecat non
+                            proident.</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
+                            ette dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris
+                            nisi ut aliq ex ea commodo consequat. Duis aute irure
+                            dolor in repreh voluptate velit esse cillum dolore fugiat nulla pariatur occaecat non
+                            proident, sunt inner culpa qui officia repreh voluptate esse cillum dolore occaecat non
+                            proident.</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
+                            ette dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <a href="./login.html" class="btn-hyipox-2">
+                            <i class="fas fa-plus"></i>
+                            Sən də qoşul
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------ SERVICES ------------------------------- -->
+
+
+
+
+{% endblock %}

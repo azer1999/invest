@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{% block content %}
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                               BREADCRUMB                                -->
+		<!-- ----------------------------------------------------------------------- -->
+		<div class="breadcrumb-rvfet db-breadcrumb">
+			<div class="container">
+				<div class="row justify-content-lg-around">
+					<div class="col-xl-6 col-lg-7 col-md-5 col-sm-6 col-8">
+						<div class="part-txt">
+							<h1>Hesabdan Çıxarış</h1>
+							<ul>
+								<li>Ana səhifə</li>
+								<li>Hesabdan Çıxarış</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-5 col-md-7 col-sm-6 col-4 d-flex align-items-center">
+						<div class="db-user-profile">
+							<div class="part-data">
+								<span class="name">Anar Anarov</span>
+								<ul>
+									<li>
+										<span class="text">Balans</span>
+										<span class="number">4,500 ₼</span>
+									</li>
+									<li>
+										<span class="text">Aktiv Yatırım</span>
+										<span class="number">1,200 ₼</span>
+									</li>
+								</ul>
+							</div>
+							<div class="part-img">
+								<img src="/static/img/member-1.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ----------------------------- BREADCRUMB ------------------------------ -->
+
+
+
+		<!-- account begin -->
+		<div class="user-dashboard">
+			<div class="container">
+
+				<div class="dashboard-menu">
+					<nav>
+						<ul>
+							<li class="nav-item">
+								<a class="nav-link" href="./dashboard.html">İstifadəçi paneli</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="./withdraw.html">Hesabdan Çıxarış</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./settings.html">Tənzimləmələr</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+
+				<div class="withdraw-section">
+					<div class="row">
+						<div class="col-xl-5 col-lg-5 col-md-5">
+							<h3 class="title">
+								Ödəniş Olunacaq Kart
+							</h3>
+							<div class="add-credit-card card">
+								<div class="card-body">
+									<form>
+										<div class="row">
+											<div class="col-xl-6 col-lg-6">
+												<div class="form-group">
+													<label for="exampleInputEmail1">Kart nömrəsi</label>
+													<input type="password" class="form-control" id="exampleInputEmail1"
+														aria-describedby="emailHelp" placeholder="•••• •••• •••• ••••">
+												</div>
+												<div class="form-group">
+													<label for="exampleInputEmail4">Kart Sahibi</label>
+													<input type="email" class="form-control" id="exampleInputEmail4"
+														aria-describedby="emailHelp" placeholder="KART SAHIBI">
+												</div>
+											</div>
+											<div class="col-xl-6 col-lg-6">
+												<div class="form-group expire-date-elem">
+													<label for="inputDate">Kartın Ləğv tarixi</label>
+													<div class="form-row">
+														<div class="form-group col-xl-6 col-lg-6 col-6">
+															<input type="text" class="form-control" id="inputdate"
+																placeholder="AY">
+														</div>
+														<div class="form-group col-xl-6 col-lg-6 col-6">
+															<input type="text" class="form-control" id="inputZip"
+																placeholder="İL">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="exampleInputEmail4">CVC</label>
+													<input type="email" class="form-control" id="exampleInputEmail4"
+														aria-describedby="emailHelp" placeholder="123">
+												</div>
+											</div>
+										</div>
+										<button type="submit" style="font-family: 'Roboto';"
+											class="btn-hyipox-medium btn-add-new-card">Kartı Yoxla</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-7 col-lg-7 col-md-7">
+							<h3 class="title">
+								Çıxarılacaq Məbləğ
+							</h3>
+							<div class="last-step">
+								<div class="payment-method-list row">
+
+									<div class="col-xl-6 col-lg-6 col-sm-12">
+										<div class="oit-width-1">
+											<label>Miqdar və Valyuta</label>
+											<form>
+												<span class="currency-symbol" id="basic-addon1">₼</span>
+												<input type="text" class="inputted-amount" value="10">
+												<button class="dropdown-toggle displayed-selected-currency"
+													type="button" id="dropdownMenuButton" data-toggle="dropdown"
+													aria-haspopup="true" aria-expanded="false">
+													AZN
+												</button>
+												<div class="dropdown-menu currency-select-list"
+													aria-labelledby="dropdownMenuButton">
+													<a class="dropdown-item single-currency-select selected-currency active"
+														href="#PREVENT SCROLL" id="selectAZN"
+														data-currency="azn">AZN</a>
+													<a class="dropdown-item single-currency-select"
+														href="#PREVENT SCROLL" id="selectUSD"
+														data-currency="usd">USD</a>
+													<a class="dropdown-item single-currency-select"
+														href="#PREVENT SCROLL" id="selectEUR"
+														data-currency="eur">EUR</a>
+												</div>
+											</form>
+											<label>Robot Olmadığınızı Təsdiqləyin</label>
+											<div class="dropdown show">
+												----------------------------------------------<br />
+												BURADA CAPTCHA OLACAQ<br />
+												BURADA CAPTCHA OLACAQ<br />
+												----------------------------------------------
+											</div>
+
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-sm-12">
+										<div class="available-balance-el">
+											<span class="title">Hesabdakı balansınız</span>
+											<ul>
+												<li class="available">
+													<span class="text">Balans: </span>
+													<span class="amount">12,850 ₼</span>
+												</li>
+												<li class="pending">
+													<span class="text">Günlük Limit: </span>
+													<span class="amount">5000 ₼</span>
+												</li>
+											</ul>
+											<a href="#" style="font-family: 'Roboto';"
+												class="btn-hyipox-medium withdraw-btn">Təsdiqlə</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- account end -->
+
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                                 FOOTER                                  -->
+		<!-- ----------------------------------------------------------------------- -->
+		<div class="footer">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+							<div class="about-widget">
+								<a href="index.html" class="logo">
+									<img src="/static/img/white.svg" alt="">
+								</a>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis commodi ut illum.
+									Cumque, unde suscipit error!</p>
+								<div class="social-links">
+									<ul>
+										<li>
+											<a href="#0" class="single-link">
+												<i class="fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#0" class="single-link">
+												<i class="fab fa-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#0" class="single-link">
+												<i class="fab fa-instagram"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#0" class="single-link">
+												<i class="fab fa-pinterest-p"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-2 col-md-6 col-sm-10">
+							<div class="link-widget">
+								<h4 class="title">
+									Faydalı keçidlər
+								</h4>
+								<ul>
+									<li>
+										<a href="./investment.html" class="single-link">
+											İnvestisiya et
+										</a>
+									</li>
+									<li>
+										<a href="./services.html" class="single-link">
+											Xidmətlər
+										</a>
+									</li>
+									<li>
+										<a href="./about.html" class="single-link">
+											Haqqımızda
+										</a>
+									</li>
+									<li>
+										<a href="./contact.html" class="single-link">
+											Əlaqə
+										</a>
+									</li>
+									<li>
+										<a href="./dashboard.html" class="single-link">
+											Hesabım
+										</a>
+									</li>
+									<li>
+										<a href="./faq.html" class="single-link">
+											FAQ
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-10">
+							<div class="newsletter-widget">
+								<h4 class="title">
+									Faydalı xəbərləri qaçırmayın
+								</h4>
+								<form class="newsletter-form">
+									<input type="text" placeholder="Email adresiniz">
+									<button class="def-btn def-small">
+										Abunə Ol
+									</button>
+								</form>
+								<p>Xəbər bülletenimizə abunə olaraq ən yeni xəbər, kompanya və şərtlərlə bağlı elektron
+									poçt əldə edə bilərsiniz.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright-area">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-8 col-lg-8">
+							<p>
+								<copyright
+									style="visibility: visible;opacity:1;display:inline-block;color: rgba(255, 255, 255, 0.6);cursor:pointer;"
+									ondblclick="if(window.confirm('\t\t\tGood job! You find the easter egg!\n\t\t\t    I make websites like this one\n\t\t\tDo you want to visit my website? :)')){window.location.href = '//rvfet.ga'}else{die();}">
+									©</copyright>
+								Copyright <a href="#">Invest.az</a> - 2021. Bütün hüquqlar qorunur.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

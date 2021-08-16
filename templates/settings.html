@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- ----------------------------------------------------------------------- -->
+		<!--                               BREADCRUMB                                -->
+		<!-- ----------------------------------------------------------------------- -->
+		<div class="breadcrumb-rvfet db-breadcrumb">
+			<div class="container">
+				<div class="row justify-content-lg-around">
+					<div class="col-xl-6 col-lg-7 col-md-5 col-sm-6 col-8">
+						<div class="part-txt">
+							<h1>İstifadəçi Paneli</h1>
+							<ul>
+								<li>Ana səhifə</li>
+								<li>İstifadəçi Paneli</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-5 col-md-7 col-sm-6 col-4 d-flex align-items-center">
+						<div class="db-user-profile">
+							<div class="part-data">
+								<span class="name">Anar Anarov</span>
+								<ul>
+									<li>
+										<span class="text">Balans</span>
+										<span class="number">4,500 ₼</span>
+									</li>
+									<li>
+										<span class="text">Aktiv Yatırım</span>
+										<span class="number">1,200 ₼</span>
+									</li>
+								</ul>
+							</div>
+							<div class="part-img">
+								<img src="/static/img/member-1.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ----------------------------- BREADCRUMB ------------------------------ -->
+
+
+
+		<!-- account begin -->
+		<div class="user-dashboard">
+			<div class="container">
+
+				<div class="dashboard-menu">
+					<nav>
+						<ul>
+							<li class="nav-item">
+								<a class="nav-link" href="./dashboard.html">İstifadəçi paneli</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./withdraw.html">Hesabdan Çıxarış</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="./settings.html">Tənzimləmələr</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+
+				<!-- profile begin -->
+				<div class="profile">
+					<div class="row justify-content-center">
+						<div class="col-xl-3 col-lg-3">
+							<div class="accont-tab">
+								<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+									aria-orientation="vertical">
+
+									<a class="nav-link active" id="personal-info-tab" data-toggle="pill"
+										href="#personal-info" role="tab" aria-controls="v-pills-home"
+										aria-selected="true">
+										<i class="far fa-user"></i>
+										Şəxsi Məlumatlar
+									</a>
+									<p>
+										Bu paneldə məlumatlarınızı gözdən keçirə və onları dəyişə bilərsiniz.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-9 col-lg-9">
+							<div class="tab-content" id="v-pills-tabContent">
+								<div class="tab-pane fade show active" id="personal-info" role="tabpanel"
+									aria-labelledby="personal-info-tab">
+									<div class="player-profile">
+										<div class="row no-gutters">
+											<div class="col-xl-4 col-lg-4 col-md-4">
+												<div class="player-card">
+													<div class="part-pic">
+														<img src="/static/img/player-user.jpg" alt="">
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-8 col-lg-8 col-md-8">
+												<div class="part-info">
+													<span class="player-name">
+														Anar Anarov
+														<img src="../static/img/svg/medal.svg" alt="">
+													</span>
+													<ul>
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Ad :
+															</span>
+
+															<span class="value current_credential active">Anar </span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="Anar">
+															</span>
+														</li>
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Soyad :
+															</span>
+
+															<span class="value current_credential active">Anarov </span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="Anarov">
+															</span>
+														</li>
+
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																İstifadəçi adı :
+															</span>
+
+															<span class="value current_credential active">daRealBroka
+															</span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="daRealBroka">
+															</span>
+														</li>
+
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Elektron Poçt :
+															</span>
+
+															<span
+																class="value current_credential active">daFakeMail@domain.com
+															</span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="daFakeMail@domain.com">
+															</span>
+														</li>
+
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Mobil Telefon :
+															</span>
+
+
+															<span class="value current_credential active">+994555555555
+															</span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="+994555555555">
+															</span>
+														</li>
+
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Vebsayt :
+															</span>
+
+															<span class="value current_credential active">anarovanar.com
+															</span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="anarovanar.com">
+															</span>
+														</li>
+
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Ölkə :
+															</span>
+
+
+															<span class="value current_credential active">Azərbaycan
+															</span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="Azərbaycan">
+															</span>
+														</li>
+
+
+
+
+
+														<li>
+															<span class="property">
+																<i class="fas fa-info-circle"></i>
+																Şəhər :
+															</span>
+
+
+															<span class="value current_credential active">Bakı </span>
+															<span class="value editable_credential">
+																<input type="text" placeholder="Bakı">
+															</span>
+														</li>
+
+
+
+
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="edit-profile text-center">
+										<a href="#PREVENT SCROLL" class="btn-hyipox-2"
+											id="toggle_edit_credentials">Məlumatları dəyiş</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- profile end -->
+
+			</div>
+		</div>
+		<!-- account end -->
+{% endblock %}
