@@ -1,5 +1,78 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="header services__header" id="header">
+			<div class="bottom">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-xl-3 col-lg-2 d-xl-flex d-lg-flex d-block align-items-center">
+							<div class="row">
+								<div class="col-6 d-xl-none d-lg-none d-block">
+									<button class="navbar-toggler" type="button">
+										<span class="dag"></span>
+										<span class="dag2"></span>
+										<span class="dag3"></span>
+									</button>
+								</div>
+								<div class="col-xl-12 col-lg-12 col-6 d-xl-block d-lg-block d-flex align-items-center justify-content-end">
+									<div class="logo">
+										<a href="index.html">
+											<img src="/static/img/white.svg" alt="">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-9 col-lg-10">
+							<div class="mainmenu">
+								<div class="d-xl-none d-lg-none d-block">
+									<div class="user-profile">
+										<div class="part-img">
+											<img src="/static/img/member-1.jpg" alt="">
+										</div>
+										<div class="user-info">
+											<span class="user-name">Anar Anarov</span>
+											<span class="user-balance">Balans : 4,500 ₼</span>
+										</div>
+										<div class="log-out-area">
+											<a href="#">Çıxış</a>
+										</div>
+									</div>
+								</div>
+								<nav class="navbar navbar-expand-lg">
+
+									<div class="collapse navbar-collapse" id="navbarSupportedContent">
+										<ul class="navbar-nav ml-auto">
+
+											<li class="nav-item">
+												<a class="nav-link" href="{% url 'service' %}">Xidmətlər</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="{% url 'about' %}">Haqqımızda</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="{% url 'contact' %}">Əlaqə</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="dashboard.html">Hesabım</a>
+											</li>
+
+											<!-- ----------------------- TO MAKE A BIT OF SPACE ------------------------ -->
+											<li class="nav-item"><a class="nav-link"></a></li>
+											<!-- ----------------------------------------------------------------------- -->
+
+											<li class="nav-item join-now-btn">
+												<a class="nav-link" href="login.html">Daxil ol</a>
+											</li>
+										</ul>
+									</div>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
     <!-- ----------------------------------------------------------------------- -->
     <!--                                SERVICES                                 -->
     <!-- ----------------------------------------------------------------------- -->
@@ -27,31 +100,10 @@
             <div class="part-para">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12">
-                        <h2 class="title">Lorem ipsum dolor sit amet consectetur.</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
-                            ette dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris
-                            nisi ut aliq ex ea commodo consequat. Duis aute irure
-                            dolor in repreh voluptate velit esse cillum dolore fugiat nulla pariatur occaecat non
-                            proident, sunt inner culpa qui officia repreh voluptate esse cillum dolore occaecat non
-                            proident.</p>
+                        <h2 class="title">{{ content.title }}</h2>
+                        <p>{{ content.text }}</p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
-                            ette dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris
-                            nisi ut aliq ex ea commodo consequat. Duis aute irure
-                            dolor in repreh voluptate velit esse cillum dolore fugiat nulla pariatur occaecat non
-                            proident, sunt inner culpa qui officia repreh voluptate esse cillum dolore occaecat non
-                            proident.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
-                            ette dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris
-                            nisi ut aliq ex ea commodo consequat. Duis aute irure
-                            dolor in repreh voluptate velit esse cillum dolore fugiat nulla pariatur occaecat non
-                            proident, sunt inner culpa qui officia repreh voluptate esse cillum dolore occaecat non
-                            proident.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore
-                            ette dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <a href="./login.html" class="btn-hyipox-2">
+                        <a href="{% url 'login' %}" class="btn-hyipox-2">
                             <i class="fas fa-plus"></i>
                             Sən də qoşul
                         </a>

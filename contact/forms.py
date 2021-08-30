@@ -7,9 +7,4 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ['user', 'email', 'message']
 
-   # widgets = {
-      #  "user":Contact(attrs={
-      #      'placeholder' : ' Salam'
-     #   })
-    #}
 

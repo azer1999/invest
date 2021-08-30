@@ -31,39 +31,20 @@
         <div class="container">
             <div class="how-to-works">
                 <div class="row justify-content-center justify-content-sm-center justify-content-md-start">
+
+                    {% for card in about_card %}
                     <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6">
                         <div class="single-system">
                             <div class="part-icon">
-                                <img src="/static/img/svg/add-user.svg" alt="">
+                                <img src="{{ card.image.url }}" alt="">
                             </div>
                             <div class="part-text">
-                                <h4 class="title">Hesab yarad</h4>
-                                <p>Qeydiyyatdan keçmək ödənişsiz və asandır.</p>
+                                <h4 class="title">{{ card.title }}</h4>
+                                <p>{{ card.text}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6">
-                        <div class="single-system">
-                            <div class="part-icon">
-                                <img src="/static/img/svg/coin.svg" alt="">
-                            </div>
-                            <div class="part-text">
-                                <h4 class="title">İnvestisiya et</h4>
-                                <p>Sizin üçün ən cəlbedici görünən sahəyə yatırım edin.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-sm-10 col-md-6">
-                        <div class="single-system">
-                            <div class="part-icon">
-                                <img src="/static/img/svg/money-bag.svg" alt="">
-                            </div>
-                            <div class="part-text">
-                                <h4 class="title">Qazancınızı alın</h4>
-                                <p>Hesabınızdakı məbləğin çıxarılışı üçün tələb göndərin.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

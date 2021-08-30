@@ -1,136 +1,148 @@
 {% extends 'base.html' %}
 {% block content %}
-
-		<!-- ----------------------------------------------------------------------- -->
-		<!--                               BREADCRUMB                                -->
-		<!-- ----------------------------------------------------------------------- -->
-		<div class="breadcrumb-rvfet">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-9 col-lg-9 col-8">
-						<div class="part-txt">
-							<h1>Qeydiyyatdan Keç</h1>
-							<ul>
-								<li>Ana Səhifə</li>
-								<li>Qeydiyyatdan keç</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-3 col-4 d-flex align-items-center">
-						<div class="part-img">
-							<img src="/static/img/breadcrumb-img.png" alt="image">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ----------------------------- BREADCRUMB ------------------------------ -->
-
-
-
-
-		<!-- ----------------------------------------------------------------------- -->
-		<!--                                REGISTER                                 -->
-		<!-- ----------------------------------------------------------------------- -->
-		<div class="register">
-			<div class="container">
-				<div class="reg-body">
-					<form>
-						<h4 class="sub-title">Qeydiyyatı tamamlamaq üçün müvafiq xanaları doldurun.</h4>
-						<div class="row">
-							<div class="col-xl-6 col-lg-6 col-md-6">
-								<input type="text" placeholder="Ad Soyad*">
-								<input type="text" placeholder="Login*">
-								<input type="password" placeholder="Şifrə*">
-								<label for="id_front" type="email" class="upload_label">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-										class="bi bi-upload" viewBox="0 0 16 16">
-										<path
-											d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-										<path
-											d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
-									</svg>
-									Şəxsiyyət Vəsiqəsinin Ön Tərəfinin Şəkli
-								</label>
-								<input type="file" name="id_front" id="id_front">
+    <style>
+        .error-warning {
+            color: #ffeded;
+            font-size: 20px;
+            text-align: center;
+            padding: 20px 0 50px 0;
+        }
+    </style>
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               BREADCRUMB                                -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="breadcrumb-rvfet">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-8">
+                    <div class="part-txt">
+                        <h1>Qeydiyyatdan Keç</h1>
+                        <ul>
+                            <li>Ana Səhifə</li>
+                            <li>Qeydiyyatdan keç</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-4 d-flex align-items-center">
+                    <div class="part-img">
+                        <img src="/static/img/breadcrumb-img.png" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------- BREADCRUMB ------------------------------ -->
 
 
 
-								<label for="id_selfie" type="email" class="upload_label">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-										<path fill="white"
-											d="M0 3v18h24v-18h-24zm13 14h-10v-.417c-.004-1.112.044-1.747 1.324-2.043 1.403-.324 2.787-.613 2.122-1.841-1.973-3.637-.563-5.699 1.554-5.699 2.077 0 3.521 1.985 1.556 5.699-.647 1.22.688 1.51 2.121 1.841 1.284.297 1.328.936 1.323 2.057v.403zm8 0h-6v-2h6v2zm0-4h-6v-2h6v2zm0-4h-6v-2h6v2z" />
-									</svg>
-									Şəxsiyyət Vəsiqəsi ilə Selfie Şəkli
-								</label>
-								<input type="file" name="id_selfie" id="id_selfie">
 
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                REGISTER                                 -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="register">
+        <div class="container">
+            <div class="reg-body">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="error-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4 class="sub-title">Qeydiyyatı tamamlamaq üçün müvafiq xanaları doldurun.</h4>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <input name="first_name" type="text" placeholder="Ad*">
+                            <input name="last_name" type="text" placeholder="Soyad">
+                            <input name="username" type="text" placeholder="Login*">
+                            <input name="password_1" type="password" placeholder="Şifrə*">
+                            <label for="id_front" type="email" class="upload_label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-upload" viewBox="0 0 16 16">
+                                    <path
+                                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path
+                                            d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                </svg>
+                                Şəxsiyyət Vəsiqəsinin Ön Tərəfinin Şəkli
+                            </label>
+                            <input name="front_passport" type="file" id="id_front">
+                            <label for="id_selfie" type="email" class="upload_label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="white"
+                                          d="M0 3v18h24v-18h-24zm13 14h-10v-.417c-.004-1.112.044-1.747 1.324-2.043 1.403-.324 2.787-.613 2.122-1.841-1.973-3.637-.563-5.699 1.554-5.699 2.077 0 3.521 1.985 1.556 5.699-.647 1.22.688 1.51 2.121 1.841 1.284.297 1.328.936 1.323 2.057v.403zm8 0h-6v-2h6v2zm0-4h-6v-2h6v2zm0-4h-6v-2h6v2z"/>
+                                </svg>
+                                Şəxsiyyət Vəsiqəsi ilə Selfie Şəkli
+                            </label>
+                            <input name="selfie_passport" type="file" id="id_selfie">
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 additional-info">
+                            <input name="email" type="email" placeholder="Elektron Poçt*">
+                            <input name="phone" type="text" placeholder="Telefon*">
+                            <input name="password_2" type="password" placeholder="Şifrə Yenidən*">
+                            <label for="id_back" type="email" class="upload_label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-upload" viewBox="0 0 16 16">
+                                    <path
+                                            d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path
+                                            d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                </svg>
+                                Şəxsiyyət Vəsiqəsinin Arxa Tərəfinin Şəkli
+                            </label>
+                            <input type="file" name="back_passport" id="id_back">
 
-							</div>
-							<div class="col-xl-6 col-lg-6 col-md-6 additional-info">
-								<input type="email" placeholder="Elektron Poçt*">
-								<input type="text" placeholder="Telefon*">
-								<input type="password" placeholder="Şifrə Yenidən*">
-								<label for="id_back" type="email" class="upload_label">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-										class="bi bi-upload" viewBox="0 0 16 16">
-										<path
-											d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-										<path
-											d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
-									</svg>
-									Şəxsiyyət Vəsiqəsinin Arxa Tərəfinin Şəkli
-								</label>
-								<input type="file" name="id_back" id="id_back">
-
-								<label type="email" class="id_selfie_tip">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-										class="bi bi-info-lg" viewBox="0 0 16 16">
-										<path
-											d="m10.277 5.433-4.031.505-.145.67.794.145c.516.123.619.309.505.824L6.101 13.68c-.34 1.578.186 2.32 1.423 2.32.959 0 2.072-.443 2.577-1.052l.155-.732c-.35.31-.866.434-1.206.434-.485 0-.66-.34-.536-.939l1.763-8.278zm.122-3.673a1.76 1.76 0 1 1-3.52 0 1.76 1.76 0 0 1 3.52 0z" />
-									</svg>
-									Şəxsiyyət vəsiqənizin və üzünüzün eyni anda aydın göründüyündən əmin olun.
-							</div>
-						</div>
-						<div class="term-condition">
-							<h4 class="title">Şərt &amp; Qaydalar</h4>
-							<p class="tos_text">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere illum dignissimos
-								laudantium, rem, labore consectetur, itaque assumenda dolore aspernatur nam molestiae
-								minima praesentium? Rerum nostrum eligendi quod commodi illum fugiat facilis non a enim
-								dicta, ut incidunt pariatur vel consequatur? Nulla, architecto excepturi explicabo
-								ratione impedit minus quas, officia, sit saepe mollitia pariatur doloremque fugit.
-								Nostrum repellat adipisci libero odio doloremque fugiat tempora debitis officia maiores
-								at. Eveniet tempora explicabo accusamus natus est totam autem cupiditate nisi iusto
-								recusandae? Fugiat corporis cum pariatur quae, nobis vitae. Esse harum facere cumque
-								maxime necessitatibus, at ut sit ea qui voluptates quis praesentium dignissimos
-								molestias perspiciatis eius, tenetur explicabo! Quo modi, facere dicta quos, voluptas,
-								iusto officiis nemo perspiciatis veritatis iste soluta impedit molestiae tempora ex?
-								Accusamus dicta fugiat fugit ratione inventore neque pariatur quis earum odit blanditiis
-								sunt vel facilis suscipit laborum animi natus quam, minima, repellat voluptates aliquid,
-								explicabo repudiandae in!
-							</p>
-						</div>
-						<div class="row">
-							<div class="col-xl-6 col-lg-6">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name="exampleRadios"
-										id="exampleRadios5" value="option2">
-									<label class="form-check-label" for="exampleRadios5">
-										Şərt &amp; Qaydaları oxudum və qəbu edirəm.
-									</label>
-									<p>(*) Qeyd etdiyiniz məlumatlar heç bir 3-cü şəxslərlə paylaşılmayacaq.</p>
-								</div>
-							</div>
-							<div class="col-xl-6 col-lg-6">
-								<button class="def-btn btn-form">Qeydiyyatı Tamamla <i
-										class="fas fa-arrow-right"></i></button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- ------------------------------ REGISTER ------------------------------- -->
+                            <label type="email" class="id_selfie_tip">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-info-lg" viewBox="0 0 16 16">
+                                    <path
+                                            d="m10.277 5.433-4.031.505-.145.67.794.145c.516.123.619.309.505.824L6.101 13.68c-.34 1.578.186 2.32 1.423 2.32.959 0 2.072-.443 2.577-1.052l.155-.732c-.35.31-.866.434-1.206.434-.485 0-.66-.34-.536-.939l1.763-8.278zm.122-3.673a1.76 1.76 0 1 1-3.52 0 1.76 1.76 0 0 1 3.52 0z"/>
+                                </svg>
+                                Şəxsiyyət vəsiqənizin və üzünüzün eyni anda aydın göründüyündən əmin olun.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="term-condition">
+                        <h4 class="title">Şərt &amp; Qaydalar</h4>
+                        <p class="tos_text">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere illum dignissimos
+                            laudantium, rem, labore consectetur, itaque assumenda dolore aspernatur nam molestiae
+                            minima praesentium? Rerum nostrum eligendi quod commodi illum fugiat facilis non a enim
+                            dicta, ut incidunt pariatur vel consequatur? Nulla, architecto excepturi explicabo
+                            ratione impedit minus quas, officia, sit saepe mollitia pariatur doloremque fugit.
+                            Nostrum repellat adipisci libero odio doloremque fugiat tempora debitis officia maiores
+                            at. Eveniet tempora explicabo accusamus natus est totam autem cupiditate nisi iusto
+                            recusandae? Fugiat corporis cum pariatur quae, nobis vitae. Esse harum facere cumque
+                            maxime necessitatibus, at ut sit ea qui voluptates quis praesentium dignissimos
+                            molestias perspiciatis eius, tenetur explicabo! Quo modi, facere dicta quos, voluptas,
+                            iusto officiis nemo perspiciatis veritatis iste soluta impedit molestiae tempora ex?
+                            Accusamus dicta fugiat fugit ratione inventore neque pariatur quis earum odit blanditiis
+                            sunt vel facilis suscipit laborum animi natus quam, minima, repellat voluptates aliquid,
+                            explicabo repudiandae in!
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios"
+                                       id="exampleRadios5" value="option2">
+                                <label class="form-check-label" for="exampleRadios5">
+                                    Şərt &amp; Qaydaları oxudum və qəbu edirəm.
+                                </label>
+                                <p>(*) Qeyd etdiyiniz məlumatlar heç bir 3-cü şəxslərlə paylaşılmayacaq.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <button type="submit" class="def-btn btn-form">Qeydiyyatı Tamamla <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------ REGISTER ------------------------------- -->
 {% endblock %}
 
