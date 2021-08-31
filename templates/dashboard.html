@@ -1,441 +1,441 @@
 {% extends 'base.html' %}
 {% block content %}
-		<!-- ----------------------------------------------------------------------- -->
-		<!--                               BREADCRUMB                                -->
-		<!-- ----------------------------------------------------------------------- -->
-		<div class="breadcrumb-rvfet db-breadcrumb">
-			<div class="container">
-				<div class="row justify-content-lg-around">
-					<div class="col-xl-6 col-lg-7 col-md-5 col-sm-6 col-8">
-						<div class="part-txt">
-							<h1>İstifadəçi Paneli</h1>
-							<ul>
-								<li>Ana səhifə</li>
-								<li>İstifadəçi Paneli</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-6 col-lg-5 col-md-7 col-sm-6 col-4 d-flex align-items-center">
-						<div class="db-user-profile">
-							<div class="part-data">
-								<span class="name">Anar Anarov</span>
-								<ul>
-									<li>
-										<span class="text">Balans</span>
-										<span class="number">4,500 ₼</span>
-									</li>
-									<li>
-										<span class="text">Aktiv Yatırım</span>
-										<span class="number">1,200 ₼</span>
-									</li>
-								</ul>
-							</div>
-							<div class="part-img">
-								<img src="/static/img/member-1.jpg" alt="">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ----------------------------- BREADCRUMB ------------------------------ -->
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               BREADCRUMB                                -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="breadcrumb-rvfet db-breadcrumb">
+        <div class="container">
+            <div class="row justify-content-lg-around">
+                <div class="col-xl-6 col-lg-7 col-md-5 col-sm-6 col-8">
+                    <div class="part-txt">
+                        <h1>İstifadəçi Paneli</h1>
+                        <ul>
+                            <li>Ana səhifə</li>
+                            <li>İstifadəçi Paneli</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-md-7 col-sm-6 col-4 d-flex align-items-center">
+                    <div class="db-user-profile">
+                        <div class="part-data">
+                            <span class="name">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+                            <ul>
+                                <li>
+                                    <span class="text">Balans</span>
+                                    <span class="number">4,500 ₼</span>
+                                </li>
+                                <li>
+                                    <span class="text">Aktiv Yatırım</span>
+                                    <span class="number">1,200 ₼</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="part-img">
+                            <img src="/static/img/member-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------- BREADCRUMB ------------------------------ -->
 
 
 
-		<!-- ----------------------------------------------------------------------- -->
-		<!--                                 ACCOUNT                                 -->
-		<!-- ----------------------------------------------------------------------- -->
-		<div class="user-dashboard">
-			<div class="container">
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                 ACCOUNT                                 -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="user-dashboard">
+        <div class="container">
 
-				<div class="dashboard-menu">
-					<nav>
-						<ul>
-							<li class="nav-item">
-								<a class="nav-link active" href="./dashboard.html">İstifadəçi paneli</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="./withdraw.html">Hesabdan Çıxarış</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="./settings.html">Tənzimləmələr</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+            <div class="dashboard-menu">
+                <nav>
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./dashboard.html">İstifadəçi paneli</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./withdraw.html">Hesabdan Çıxarış</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./settings.html">Tənzimləmələr</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
-				<div class="user-statics">
-					<div class="row">
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/002-cash.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">12,800 ₼</span>
-									<span class="text">Toplam gəlir</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/003-credit-card.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">6,800 ₼</span>
-									<span class="text">Hesabdan Çıxarış</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/001-donation.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">95.00%</span>
-									<span class="text">Uğurlu yatırım</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/004-hourglass.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">242 ₼</span>
-									<span class="text">Gözləmədə olan</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/005-percentage.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">1265 ₼</span>
-									<span class="text">Təqribi aylıq gəlir</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/006-wage.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">14750 ₼</span>
-									<span class="text">Təqribi illik gəlir</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/007-referral.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">-685 ₼</span>
-									<span class="text">Uğursuz yatırım</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-							<div class="single-statics">
-								<div class="part-icon">
-									<img src="/static/img/icon/008-transfer.png" alt="">
-								</div>
-								<div class="part-info">
-									<span class="number">218x</span>
-									<span class="text">Toplam yatırım</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+            <div class="user-statics">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/002-cash.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">12,800 ₼</span>
+                                <span class="text">Toplam gəlir</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/003-credit-card.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">6,800 ₼</span>
+                                <span class="text">Hesabdan Çıxarış</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/001-donation.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">95.00%</span>
+                                <span class="text">Uğurlu yatırım</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/004-hourglass.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">242 ₼</span>
+                                <span class="text">Gözləmədə olan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/005-percentage.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">1265 ₼</span>
+                                <span class="text">Təqribi aylıq gəlir</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/006-wage.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">14750 ₼</span>
+                                <span class="text">Təqribi illik gəlir</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/007-referral.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">-685 ₼</span>
+                                <span class="text">Uğursuz yatırım</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-statics">
+                            <div class="part-icon">
+                                <img src="/static/img/icon/008-transfer.png" alt="">
+                            </div>
+                            <div class="part-info">
+                                <span class="number">218x</span>
+                                <span class="text">Toplam yatırım</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-				<div class="row">
-					<div class="col-xl-12 col-lg-12">
-						<div class="transactions-table">
-							<h3 class="title">
-								İnvestisiyalarınızın tarixçəsi
-							</h3>
-							<div class="table-responsive">
-								<table id="example" class="display misco-data-table" style="width:100%">
-									<thead>
-										<tr>
-											<th>İnvestisiya</th>
-											<th>Növ</th>
-											<th>Status</th>
-											<th>Başlanğıc Tarixi</th>
-											<th>Bitiş Tarixi</th>
-											<th>Başlanğıc Məbləğ</th>
-											<th>Qazanc</th>
-										</tr>
-									</thead>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-									<tr>
-										<td>Bitcoin</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>15/08/2019</td>
-										<td>15/08/2021</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Etherium</td>
-										<td>Trade</td>
-										<td class="not_succesfull_trade">Uğursuz</td>
-										<td>18/04/2018</td>
-										<td>17/06/2019</td>
-										<td>140 ₼</td>
-										<td>-50 ₼</td>
-									</tr>
-									<tr>
-										<td>SOCAR Səhmi</td>
-										<td>Trade</td>
-										<td class="succesfull_trade">Uğurlu</td>
-										<td>10/14/2079</td>
-										<td>12/31/2113</td>
-										<td>250 ₼</td>
-										<td>+200 ₼</td>
-									</tr>
-									<tr>
-										<td>Pinterest Səhmi</td>
-										<td>Trade</td>
-										<td class="pending_trade">Davam edir</td>
-										<td>9/13/2091</td>
-										<td>5/5/2117</td>
-										<td>160 ₼</td>
-										<td>+36 ₼</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- account end -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="transactions-table">
+                        <h3 class="title">
+                            İnvestisiyalarınızın tarixçəsi
+                        </h3>
+                        <div class="table-responsive">
+                            <table id="example" class="display misco-data-table" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>İnvestisiya</th>
+                                    <th>Növ</th>
+                                    <th>Status</th>
+                                    <th>Başlanğıc Tarixi</th>
+                                    <th>Bitiş Tarixi</th>
+                                    <th>Başlanğıc Məbləğ</th>
+                                    <th>Qazanc</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Bitcoin</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>15/08/2019</td>
+                                    <td>15/08/2021</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Etherium</td>
+                                    <td>Trade</td>
+                                    <td class="not_succesfull_trade">Uğursuz</td>
+                                    <td>18/04/2018</td>
+                                    <td>17/06/2019</td>
+                                    <td>140 ₼</td>
+                                    <td>-50 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>SOCAR Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="succesfull_trade">Uğurlu</td>
+                                    <td>10/14/2079</td>
+                                    <td>12/31/2113</td>
+                                    <td>250 ₼</td>
+                                    <td>+200 ₼</td>
+                                </tr>
+                                <tr>
+                                    <td>Pinterest Səhmi</td>
+                                    <td>Trade</td>
+                                    <td class="pending_trade">Davam edir</td>
+                                    <td>9/13/2091</td>
+                                    <td>5/5/2117</td>
+                                    <td>160 ₼</td>
+                                    <td>+36 ₼</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- account end -->
 {% endblock %}
 
 

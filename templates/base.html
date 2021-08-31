@@ -76,12 +76,18 @@
                                     <div class="part-img">
                                         <img src="/static/img/member-1.jpg" alt="">
                                     </div>
-                                    <div class="user-info">
-                                        <span class="user-name">Anar Anarov</span>
-                                        <span class="user-balance">Balans : 4,500 ₼</span>
-                                    </div>
+                                    {% if request.user.is_authenticated %}
+                                        <div class="user-info">
+                                            <span class="user-name">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+                                            <span class="user-balance"></span>
+                                        </div>
+                                    {% endif %}
                                     <div class="log-out-area">
-                                        <a href="#">Çıxış</a>
+                                        {% if request.user.is_authenticated %}
+                                            <a href="{% url 'logout' %}">Çıxış</a>
+                                        {% else %}
+                                            <a href="{% url 'login' %}">Giriş</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +115,6 @@
                                         <!-- ----------------------------------------------------------------------- -->
 
                                         <li class="nav-item join-now-btn">
-                                            {{ request.user.email }}
                                             {% if request.user.is_authenticated %}
                                                 <a class="nav-link" href="{% url 'logout' %}">Cixiş</a>
                                             {% else %}
@@ -147,26 +152,14 @@
                                 Cumque, unde suscipit error!</p>
                             <div class="social-links">
                                 <ul>
-                                    <li>
-                                        <a href="#0" class="single-link">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0" class="single-link">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0" class="single-link">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0" class="single-link">
-                                            <i class="fab fa-pinterest-p"></i>
-                                        </a>
-                                    </li>
+                                    {% for i in media %}
+                                        <li>
+                                            <a href="{{ i.url }}" class="single-link">
+                                                <i class="fab fa-{{ i.media }}"></i>
+                                            </a>
+                                        </li>
+
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
