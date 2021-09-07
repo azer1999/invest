@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login as auth_login
 
-from account.models import Investor
+from account.models import Investor, UserPanel
 
 
 def login(request):
@@ -58,4 +58,7 @@ def register(request):
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    context = {
+        "user_panel": UserPanel.objects.all()
+    }
+    return render(request, 'dashboard.html',context)

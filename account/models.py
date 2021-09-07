@@ -14,3 +14,13 @@ class Investor(models.Model):
 
     def __str__(self):
         return f'{self.user.first_name} -  {self.user.last_name}'
+
+
+class UserPanel(models.Model):
+    title = models.CharField(max_length=55)
+    image = models.ImageField(upload_to='dashboard/image')
+    text = models.TextField()
+
+    def __str__(self):
+        return self.title
+

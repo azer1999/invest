@@ -10,3 +10,6 @@ def index(request):
     context['who'] = WhoWeAre.objects.last()
     context['partners'] = Partner.objects.all()
     return render(request, 'index.html', context)
+
+
+
